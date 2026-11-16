@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+ {% block title %}Experience{% endlock %}
+ {% block content %}
+
+<section class="'hero section">
+    <h1 class="hero-title">Selamat datang</h1>
+    <p class="hero-subtitle">
+    Berikut adalah teknologi dan kealihan yang saya kuasai
+    </p>
+
+    <div class="timeline">
+        {% for exp in experience %}
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">{{ exp.year }}</div>
+            <div class="timeline-content">
+                <h3>{{ exp.title }}</h3>
+                <p>{{ exp.desc }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock $}

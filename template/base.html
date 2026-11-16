@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}portfolio{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills">Skills</a>
+        <a href="experience">Experience</a>
+        <a href="contact.html">Contact</a>
+        <a href="project.html">Projects</a>
+    </nav>
+
+    <div class="container">
+        {% with message = get_flashed_message(with_catagories=true) %}
+            {% for catagory, message in messages %}
+                <div class="flash-message {{catagory}}" roles="status">{{message}}</div>
+                {% endfor %}
+            {% endwith %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

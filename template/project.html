@@ -1,0 +1,51 @@
+{ %extends "base.html" %}
+{% block title %}Project{% endblock %}
+{% block content %}
+   
+    <header>
+     <h1>MY PROJECTS</h1>
+   <p>Berikut adalah beberapa project yang pernah saya buat</p>
+      <form action="{{ url_for('search') }}" method="get">
+            <label for="project-query">Cari proyek:</label>
+            <input id="project-query" type="search" name="q" placeholder="Nama proyek">
+            <button type="submit">Cari</button>
+        </form>
+    </header>
+   
+    <main class="project-gallery">
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/project.png') }}" alt="">
+            <div class="content"
+            <h2>Academic Student Tracker</h2>
+            <p>Applikasi sederhana pencatat data nilai siswa, penghitung kelulusan dan rata nilai siswa</p>
+            <button><a href="{{ url_for('student_tracker)}}>View Project</a></button>
+        </div>
+            <button>View Project</button>
+        </div>
+    </div>
+
+        <main class="project-gallery">
+         <div class="project-card">
+            <img src="images/project.png" alt=""
+            <h2>Finance Tracker</h2>
+            <p>Aplikasi untuk mencatat keuangan, saldo, pendapatan dan pengeluaran</p>
+            <button><a href="{{ url_for('finance')}}">View Project</a></button>
+        </div>
+    </div>
+
+        <div class="project-card">
+            <h2>Project 2</h2>
+            <p>Website sederhana menggunakan HTML dan CSS</p>
+            <button>View Project</button>
+        </div>
+    </div>
+
+        <div class="project-card">
+            <h2>Project 3</h2>
+            <p>Website sederhana menggunakan HTML dan CSS</p>
+            <button>View Project</button>
+        </div>
+
+    </div>
+
+{% endblock %}

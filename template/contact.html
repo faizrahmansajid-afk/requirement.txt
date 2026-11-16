@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+
+    <h1>Hubungi saya!</h1>
+    <img src="images/profile.jpg" alt="mobil" width="200">
+    <p>Masukkan nama dan pesanmu kedalam form dibawah ini</p>
+    <form action="{{ url_for('contact')}}" method="post">
+        <label>Nama:</label>
+        <input type="text" name="nama"> <br>
+        <label>Pesan:</label>
+        <textarea name="pesan" rows="4"></textarea><br>
+        <button type="submit">Kirim</button>
+        </form>
+        <hr>
+
+ {% endblock %}

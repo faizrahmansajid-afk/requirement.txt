@@ -1,0 +1,22 @@
+{ %extends "base.html" %}
+{% block title %}To Do List{% endblock %}
+{% block content %}
+
+<h3>TO DO LIST APP</h3>
+
+{% if edit_index is defined %}
+<form method="post" action="/todo/edit/{{ edit_index }}">
+    <input type="text" name="item" value="{{ edit_value }}" required>
+    <button>Simpan</button>
+    <a href="/todo">Batal</a>
+</form>
+{% else %} <!-- membuat logika jika ingin menambah data -->
+<form method="post" action="/todo">
+    <input type="text" name="item" placeholder="Tulis kegiatan/to do" required>
+    <button>Tambah</button>
+</form>
+{% endif %}
+
+<ul>
+    
+</ul>
